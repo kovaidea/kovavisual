@@ -32,19 +32,59 @@
   .nav-cta:hover { background: var(--burgundy) !important; }
   .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
   .hero-left { display: flex; flex-direction: column; justify-content: flex-end; padding: 160px 48px 80px; position: relative; z-index: 2; }
+  .hero-tag { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s 0.3s forwards; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(56px, 6vw, 88px); font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 40px; opacity: 0; animation: fadeUp 0.9s 0.5s forwards; }
   .hero-tag { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 32px; }
   .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(56px, 6vw, 88px); font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 40px; }
   .hero-title em { font-style: italic; color: var(--burgundy); }
+  .hero-desc { font-size: 13px; line-height: 1.8; color: var(--warm-gray); max-width: 340px; margin-bottom: 48px; opacity: 0; animation: fadeUp 0.9s 0.7s forwards; }
+  .hero-actions { display: flex; gap: 20px; align-items: center; opacity: 0; animation: fadeUp 0.9s 0.9s forwards; }
   .hero-desc { font-size: 13px; line-height: 1.8; color: var(--warm-gray); max-width: 340px; margin-bottom: 48px; }
   .btn-primary { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream); background: var(--dark); padding: 14px 32px; text-decoration: none; transition: background 0.2s; display: inline-block; }
   .btn-primary:hover { background: var(--burgundy); }
+  .btn-secondary { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark); text-decoration: none; opacity: 0.5; transition: opacity 0.2s; display: flex; align-items: center; gap: 8px; }
+  .btn-secondary:hover { opacity: 1; }
+  .btn-secondary::after { content: '→'; }
+  .hero-right { position: relative; overflow: hidden; opacity: 0; animation: fadeIn 1.2s 0.4s forwards; }
+  .hero-image-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #2A2220 0%, #1A1714 40%, #6B1F2A 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .hero-image-placeholder::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, rgba(196,168,130,0.15) 0%, transparent 60%); }
+  .hero-img-label { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: rgba(245,240,235,0.08); letter-spacing: 0.1em; position: absolute; bottom: 40px; right: 40px; }
+  .ai-badge { border: 1px solid rgba(245,240,235,0.2); padding: 12px 20px; color: rgba(245,240,235,0.7); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; position: absolute; top: 48px; left: 40px; }
+  .model-visual { width: 200px; height: 300px; border: 1px solid rgba(245,240,235,0.1); position: relative; display: flex; align-items: center; justify-content: center; }
+  .model-visual::before { content: ''; position: absolute; inset: 12px; background: linear-gradient(180deg, rgba(196,168,130,0.1) 0%, rgba(107,31,42,0.2) 100%); }
+  .model-visual-icon { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: rgba(245,240,235,0.4); letter-spacing: 0.15em; text-transform: uppercase; position: relative; z-index: 1; font-style: italic; }
+  .stats-bar { background: var(--dark); padding: 32px 48px; display: flex; gap: 64px; overflow-x: auto; }
+  .stat-item { flex-shrink: 0; opacity: 0; animation: fadeUp 0.7s forwards; }
+  .stat-item:nth-child(1) { animation-delay: 0.1s; } .stat-item:nth-child(2) { animation-delay: 0.2s; } .stat-item:nth-child(3) { animation-delay: 0.3s; } .stat-item:nth-child(4) { animation-delay: 0.4s; }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--cream); line-height: 1; }
+  .stat-num span { color: var(--accent); }
+  .stat-text { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-top: 6px; }
   .hero-right { position: relative; overflow: hidden; background: var(--light-gray); }
   .hero-img-full { width: 100%; height: 100%; object-fit: cover; }
   .ai-badge { border: 1px solid rgba(245,240,235,0.5); background: rgba(26, 23, 20, 0.2); backdrop-filter: blur(4px); padding: 12px 20px; color: var(--cream); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; position: absolute; top: 48px; left: 40px; z-index: 5; }
   section { padding: 100px 48px; }
   .section-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 64px; display: flex; align-items: center; gap: 16px; }
   .section-label::before { content: ''; width: 32px; height: 1px; background: var(--warm-gray); }
+  .services { background: var(--cream); }
+  .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 80px; }
+  .services-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 4vw, 60px); font-weight: 300; line-height: 1.1; }
+  .services-title em { font-style: italic; color: var(--burgundy); }
+  .services-intro { max-width: 300px; font-size: 13px; line-height: 1.8; color: var(--warm-gray); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--light-gray); }
+  .service-card { background: var(--cream); padding: 48px 36px; transition: background 0.3s; cursor: default; }
+  .service-card:hover { background: var(--dark); }
+  .service-card:hover .service-num, .service-card:hover .service-name, .service-card:hover .service-desc { color: var(--cream); }
+  .service-card:hover .service-divider { background: var(--accent); }
+  .service-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--warm-gray); margin-bottom: 32px; transition: color 0.3s; }
+  .service-divider { width: 24px; height: 1px; background: var(--light-gray); margin-bottom: 24px; transition: background 0.3s; }
+  .service-name { font-size: 16px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; transition: color 0.3s; }
+  .service-desc { font-size: 13px; line-height: 1.7; color: var(--warm-gray); transition: color 0.3s; }
+  .service-price { margin-top: 28px; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--accent); }
   .portfolio { background: var(--dark); padding: 100px 48px; }
+  .portfolio-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 4vw, 60px); font-weight: 300; color: var(--cream); margin-bottom: 64px; line-height: 1.1; }
+  .portfolio-title em { font-style: italic; color: var(--accent); }
+  .portfolio-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 2px; }
+  .portfolio-item { background: #2A2220; aspect-ratio: 4/5; position: relative; overflow: hidden; cursor: pointer; }
   .portfolio-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 4vw, 60px); font-weight: 300; color: var(--cream); margin-bottom: 64px; }
   .portfolio-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 15px; }
   .portfolio-item { aspect-ratio: 4/5; position: relative; overflow: hidden; cursor: pointer; background: #2A2220; }
@@ -53,12 +93,50 @@
   .portfolio-item:hover .portfolio-img { transform: scale(1.05); }
   .portfolio-overlay { position: absolute; inset: 0; background: rgba(107,31,42,0.6); display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; opacity: 0; transition: opacity 0.3s; }
   .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+  .portfolio-overlay { position: absolute; inset: 0; background: rgba(107,31,42,0.7); display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; opacity: 0; transition: opacity 0.3s; }
+  .portfolio-tag { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .portfolio-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--cream); font-style: italic; }
+  .portfolio-visual { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .pv-1 { background: linear-gradient(160deg, #2A2220, #3D1A22); } .pv-2 { background: linear-gradient(160deg, #1E2A2A, #1A2830); } .pv-3 { background: linear-gradient(160deg, #2A2618, #221E10); } .pv-4 { background: linear-gradient(160deg, #1E1E2A, #18182A); } .pv-5 { background: linear-gradient(160deg, #2A1E18, #301A12); }
+  .pv-label { font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(245,240,235,0.12); font-size: 28px; text-align: center; padding: 20px; }
+  .process { background: var(--cream); }
+  .process-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 4vw, 60px); font-weight: 300; margin-bottom: 80px; line-height: 1.1; }
+  .process-title em { font-style: italic; color: var(--burgundy); }
+  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--light-gray); }
+  .process-step { background: var(--cream); padding: 40px 28px; }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--light-gray); line-height: 1; margin-bottom: 24px; }
+  .step-title { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+  .step-desc { font-size: 12px; line-height: 1.7; color: var(--warm-gray); }
+  .contact { background: var(--dark); padding: 120px 48px; text-align: center; }
+  .contact-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 32px; }
+  .contact-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 6vw, 88px); font-weight: 300; color: var(--cream); line-height: 0.95; margin-bottom: 48px; }
+  .contact-title em { font-style: italic; color: var(--accent); }
+  .contact-email { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--accent); text-decoration: none; letter-spacing: 0.05em; display: block; margin-bottom: 48px; transition: color 0.2s; }
   .portfolio-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--cream); font-style: italic; }
   .contact { background: var(--dark); padding: 120px 48px; text-align: center; color: var(--cream); }
   .contact-email { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 5vw, 48px); color: var(--accent); text-decoration: none; display: block; margin: 40px 0; transition: color 0.3s; }
   .contact-email:hover { color: var(--cream); }
+  .contact-actions { display: flex; gap: 16px; justify-content: center; }
+  footer { background: var(--dark); border-top: 1px solid rgba(245,240,235,0.08); padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); text-decoration: none; }
+  .footer-copy { font-size: 10px; letter-spacing: 0.1em; color: var(--warm-gray); text-transform: uppercase; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--cream); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   footer { background: var(--dark); padding: 32px 48px; display: flex; justify-content: space-between; color: var(--warm-gray); font-size: 10px; text-transform: uppercase; border-top: 1px solid rgba(255,255,255,0.1); }
   @media (max-width: 768px) {
+    nav { padding: 20px 24px; top: 32px; } .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; } .hero-right { height: 50vh; } .hero-left { padding: 120px 24px 60px; }
+    section { padding: 64px 24px; } .services-header { flex-direction: column; gap: 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .portfolio-item:first-child { grid-column: span 2; grid-row: span 1; aspect-ratio: 16/9; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .contact-actions { flex-direction: column; align-items: center; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+    .stats-bar { padding: 24px; gap: 40px; } .lang-bar { padding: 8px 24px; }
     .hero { grid-template-columns: 1fr; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
@@ -77,31 +155,80 @@
 <nav>
   <a href="#" class="nav-logo">Kova Visual</a>
   <div class="nav-links">
+    <a href="#servizi" data-it="Servizi" data-en="Services">Servizi</a>
     <a href="#lavori" data-it="Lavori" data-en="Work">Lavori</a>
+    <a href="#processo" data-it="Come lavoriamo" data-en="Process">Come lavoriamo</a>
     <a href="#contatti" class="nav-cta" data-it="Scrivici" data-en="Get in touch">Scrivici</a>
   </div>
 </nav>
 
 <section class="hero">
   <div class="hero-left">
+    <p class="hero-tag" data-it="AI Brand Studio · Italia & Worldwide" data-en="AI Brand Studio · Italy & Worldwide">AI Brand Studio · Italia & Worldwide</p>
     <p class="hero-tag">AI Brand Studio · Italia & Worldwide</p>
     <h1 class="hero-title"><span data-it="Visuals<br>per il tuo<br><em>brand</em>" data-en="Fashion<br>visuals,<br><em>reimagined</em>">Visuals<br>per il tuo<br><em>brand</em></span></h1>
+    <p class="hero-desc" data-it="Creiamo foto e lookbook di qualità editoriale per brand fashion — senza studio, senza set. Tecnologia AI, visione strategica." data-en="We create editorial-quality photos and lookbooks for fashion brands — without the studio, without the shoot. AI-powered. Strategy-led.">Creiamo foto e lookbook di qualità editoriale per brand fashion — senza studio, senza set. Tecnologia AI, visione strategica.</p>
     <p class="hero-desc">Sviluppiamo campagne e lookbook editoriali attraverso la tecnologia AI. Visione creativa senza i limiti del set tradizionale.</p>
     <div class="hero-actions">
+      <a href="#lavori" class="btn-primary" data-it="Vedi i nostri lavori" data-en="View our work">Vedi i nostri lavori</a>
+      <a href="#contatti" class="btn-secondary" data-it="Inizia un progetto" data-en="Start a project">Inizia un progetto</a>
       <a href="#lavori" class="btn-primary">Esplora i progetti</a>
     </div>
   </div>
   <div class="hero-right">
+    <div class="hero-image-placeholder">
+      <div class="ai-badge">AI Visual Production</div>
+      <div class="model-visual"><span class="model-visual-icon">kova visual</span></div>
+      <div class="hero-img-label">KOVA</div>
+    </div>
+  </div>
+</section>
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-text" data-it="Consegna garantita" data-en="Delivery time">Consegna garantita</div></div>
+  <div class="stat-item"><div class="stat-num">80<span>%</span></div><div class="stat-text" data-it="Risparmio sui costi" data-en="Cost reduction">Risparmio sui costi</div></div>
+  <div class="stat-item"><div class="stat-num">∞</div><div class="stat-text" data-it="Revisioni incluse" data-en="Iterations included">Revisioni incluse</div></div>
+  <div class="stat-item"><div class="stat-num">0</div><div class="stat-text" data-it="Set fotografici necessari" data-en="Physical shoots needed">Set fotografici necessari</div></div>
+</div>
+<section class="services" id="servizi">
+  <div class="section-label" data-it="Cosa offriamo" data-en="What we offer">Cosa offriamo</div>
+  <div class="services-header">
+    <h2 class="services-title"><span data-it="Servizi visivi<br>per i <em>brand moderni</em>" data-en="Visual services<br>built for<br><em>modern brands</em>">Servizi visivi<br>per i <em>brand moderni</em></span></h2>
+    <p class="services-intro" data-it="Dal singolo prodotto alle campagne stagionali — consegniamo visual coerenti e on-brand alla velocità che la tua azienda richiede." data-en="From single product shots to full seasonal campaigns — we deliver consistent, on-brand visuals at the speed your business needs.">Dal singolo prodotto alle campagne stagionali — consegniamo visual coerenti e on-brand alla velocità che la tua azienda richiede.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-num">01</div><div class="service-divider"></div><div class="service-name" data-it="Lookbook AI" data-en="AI Lookbook">Lookbook AI</div><p class="service-desc" data-it="Lookbook stagionale completo con modelle AI, direzione artistica e linguaggio visivo coerente. 30–50 immagini in 48 ore." data-en="Full seasonal lookbook with AI models, art direction and consistent visual language. 30–50 images in 48 hours.">Lookbook stagionale completo con modelle AI, direzione artistica e linguaggio visivo coerente. 30–50 immagini in 48 ore.</p><div class="service-price">Da €1.500</div></div>
+    <div class="service-card"><div class="service-num">02</div><div class="service-divider"></div><div class="service-name" data-it="Visual E-commerce" data-en="E-commerce Visuals">Visual E-commerce</div><p class="service-desc" data-it="Foto prodotto su modella per il tuo shop online. Ad alta conversione, coerenti su tutti i prodotti." data-en="On-model product photography for your online store. High-converting, consistent across all SKUs.">Foto prodotto su modella per il tuo shop online. Ad alta conversione, coerenti su tutti i prodotti.</p><div class="service-price">Da €800</div></div>
+    <div class="service-card"><div class="service-num">03</div><div class="service-divider"></div><div class="service-name" data-it="Contenuti Social" data-en="Social Content">Contenuti Social</div><p class="service-desc" data-it="Produzione mensile di contenuti per Instagram e TikTok — Reels, caroselli, stories. Pianificati, non casuali." data-en="Monthly content production for Instagram and TikTok — Reels, carousels, stories. Planned, not random.">Produzione mensile di contenuti per Instagram e TikTok — Reels, caroselli, stories. Pianificati, non casuali.</p><div class="service-price">Da €1.200/mese</div></div>
+    <div class="service-card"><div class="service-num">04</div><div class="service-divider"></div><div class="service-name" data-it="Strategia Visiva" data-en="Visual Strategy">Strategia Visiva</div><p class="service-desc" data-it="Audit visivo del brand, analisi della concorrenza e roadmap contenuti a 3 mesi con obiettivi misurabili." data-en="Brand visual audit, competitor analysis and a 3-month content roadmap with measurable goals.">Audit visivo del brand, analisi della concorrenza e roadmap contenuti a 3 mesi con obiettivi misurabili.</p><div class="service-price">Da €900</div></div>
+    <div class="service-card"><div class="service-num">05</div><div class="service-divider"></div><div class="service-name" data-it="Campagne Stagionali" data-en="Campaign Production">Campagne Stagionali</div><p class="service-desc" data-it="Campagna con direzione artistica completa per lanci, drop stagionali o riposizionamento del brand. Consegna multi-formato." data-en="Full art-directed campaign for launches, seasonal drops or brand repositioning. Multi-format delivery.">Campagna con direzione artistica completa per lanci, drop stagionali o riposizionamento del brand. Consegna multi-formato.</p><div class="service-price">Da €2.500</div></div>
+    <div class="service-card"><div class="service-num">06</div><div class="service-divider"></div><div class="service-name" data-it="Partnership Mensile" data-en="Retainer Partnership">Partnership Mensile</div><p class="service-desc" data-it="Partner visivo continuativo. Gestiamo i tuoi contenuti mensili dall'inizio alla fine, strategia inclusa." data-en="Ongoing visual partner. We handle your monthly content needs end-to-end, with strategy included.">Partner visivo continuativo. Gestiamo i tuoi contenuti mensili dall'inizio alla fine, strategia inclusa.</p><div class="service-price">Da €2.000/mese</div></div>
     <div class="ai-badge">AI Visual Production</div>
     <img src="hero.jpg" alt="Kova Visual Hero" class="hero-img-full">
   </div>
 </section>
 
 <section class="portfolio" id="lavori">
+  <div class="section-label" style="color: var(--warm-gray);" data-it="Progetti selezionati" data-en="Selected work">Progetti selezionati</div>
+  <h2 class="portfolio-title"><span data-it="Lavori che<br><em>convertono</em>" data-en="Work that<br><em>sells</em>">Lavori che<br><em>convertono</em></span></h2>
   <div class="section-label" style="color: var(--warm-gray);">Portfolio</div>
   <h2 class="portfolio-title">Progetti <em>selezionati</em></h2>
   
   <div class="portfolio-grid">
+    <div class="portfolio-item pv-1"><div class="portfolio-visual"><div class="pv-label">Apparel<br>Lookbook<br>SS 2025</div></div><div class="portfolio-overlay"><div class="portfolio-tag" data-it="Lookbook · 40 immagini" data-en="Lookbook · 40 images">Lookbook · 40 immagini</div><div class="portfolio-name" data-it="Campagna Primavera" data-en="Spring Campaign">Campagna Primavera</div></div></div>
+    <div class="portfolio-item pv-2"><div class="portfolio-visual"><div class="pv-label">E-comm<br>Product</div></div><div class="portfolio-overlay"><div class="portfolio-tag" data-it="E-commerce · 80 prodotti" data-en="E-commerce · 80 SKUs">E-commerce · 80 prodotti</div><div class="portfolio-name" data-it="Visual Prodotto" data-en="Product Visuals">Visual Prodotto</div></div></div>
+    <div class="portfolio-item pv-3"><div class="portfolio-visual"><div class="pv-label">Social<br>Content</div></div><div class="portfolio-overlay"><div class="portfolio-tag" data-it="Social · 3 mesi" data-en="Social · 3 months">Social · 3 mesi</div><div class="portfolio-name" data-it="Contenuti Mensili" data-en="Content Retainer">Contenuti Mensili</div></div></div>
+    <div class="portfolio-item pv-4"><div class="portfolio-visual"><div class="pv-label">Campaign<br>FW 2024</div></div><div class="portfolio-overlay"><div class="portfolio-tag" data-it="Campagna · Produzione completa" data-en="Campaign · Full production">Campagna · Produzione completa</div><div class="portfolio-name" data-it="Campagna Autunno" data-en="Winter Campaign">Campagna Autunno</div></div></div>
+    <div class="portfolio-item pv-5"><div class="portfolio-visual"><div class="pv-label">Accessories<br>Shoot</div></div><div class="portfolio-overlay"><div class="portfolio-tag" data-it="E-commerce · Accessori" data-en="E-commerce · Accessories">E-commerce · Accessori</div><div class="portfolio-name" data-it="Linea Accessori" data-en="Accessories Line">Linea Accessori</div></div></div>
+  </div>
+</section>
+<section class="process" id="processo">
+  <div class="section-label" data-it="Come lavoriamo" data-en="How we work">Come lavoriamo</div>
+  <h2 class="process-title"><span data-it="Processo semplice,<br><em>risultati rapidi</em>" data-en="Simple process,<br><em>fast results</em>">Processo semplice,<br><em>risultati rapidi</em></span></h2>
+  <div class="process-steps">
+    <div class="process-step"><div class="step-num">01</div><div class="step-title" data-it="Brief" data-en="Brief">Brief</div><p class="step-desc" data-it="Conosciamo il tuo brand, i riferimenti e gli obiettivi. Una call di 30 minuti o un brief scritto — a tua scelta." data-en="We learn your brand, references, and goals. A 30-min call or a written brief — your choice.">Conosciamo il tuo brand, i riferimenti e gli obiettivi. Una call di 30 minuti o un brief scritto — a tua scelta.</p></div>
+    <div class="process-step"><div class="step-num">02</div><div class="step-title" data-it="Direzione Artistica" data-en="Art Direction">Direzione Artistica</div><p class="step-desc" data-it="Definiamo la direzione visiva: modelle, ambientazioni, mood. Approvi tutto prima che inizi la produzione." data-en="We define the visual direction: models, settings, mood. You approve before production starts.">Definiamo la direzione visiva: modelle, ambientazioni, mood. Approvi tutto prima che inizi la produzione.</p></div>
+    <div class="process-step"><div class="step-num">03</div><div class="step-title" data-it="Produzione AI" data-en="Production">Produzione AI</div><p class="step-desc" data-it="Produzione AI di tutti i visual. Revisioni incluse fino alla tua completa soddisfazione." data-en="AI-powered production of all visuals. Iterations included until you're satisfied.">Produzione AI di tutti i visual. Revisioni incluse fino alla tua completa soddisfazione.</p></div>
+    <div class="process-step"><div class="step-num">04</div><div class="step-title" data-it="Consegna" data-en="Delivery">Consegna</div><p class="step-desc" data-it="File finali consegnati in 48 ore. Pronti per e-commerce, social e stampa." data-en="Final files delivered in 48 hours. Ready for e-commerce, social, and print.">File finali consegnati in 48 ore. Pronti per e-commerce, social e stampa.</p></div>
     <div class="portfolio-item">
       <img src="lavoro1.jpg" class="portfolio-img">
       <div class="portfolio-overlay">
@@ -136,11 +263,20 @@
 </section>
 
 <section class="contact" id="contatti">
+  <p class="contact-eyebrow" data-it="Pronta a iniziare?" data-en="Ready to start?">Pronta a iniziare?</p>
+  <h2 class="contact-title"><span data-it="Costruiamo il tuo<br><em>mondo visivo</em>" data-en="Let's build<br>your <em>visual world</em>">Costruiamo il tuo<br><em>mondo visivo</em></span></h2>
   <h2 class="contact-title" data-it="Inizia il tuo <em>progetto</em>" data-en="Start your <em>project</em>">Inizia il tuo <em>progetto</em></h2>
   <a href="mailto:hello@kovavisual.com" class="contact-email">hello@kovavisual.com</a>
+  <div class="contact-actions">
+    <a href="mailto:hello@kovavisual.com" class="btn-primary" data-it="Invia un brief" data-en="Send a brief">Invia un brief</a>
+    <a href="https://instagram.com/kova_visual" class="btn-secondary" style="color: var(--cream);" data-it="Seguici su Instagram" data-en="Follow on Instagram">Seguici su Instagram</a>
+  </div>
 </section>
 
 <footer>
+  <a href="#" class="footer-logo">Kova Visual</a>
+  <span class="footer-copy" data-it="©️ 2026 KOVA VISUAL — Italia & Worldwide" data-en="©️ 2026 KOVA VISUAL — Italy & Worldwide">©️ 2026 KOVA VISUAL — Italia & Worldwide</span>
+  <div class="footer-links"><a href="https://instagram.com/kova_visual">Instagram</a><a href="mailto:hello@kovavisual.com">Email</a></div>
   <a href="#" style="color: var(--cream); text-decoration: none;">Kova Visual</a>
   <span>©️ 2026 KOVA VISUAL</span>
 </footer>
@@ -152,7 +288,13 @@
   document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
   function animRing() { rx += (mx-rx)*0.12; ry += (my-ry)*0.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(animRing); }
   animRing();
+  document.querySelectorAll('a, button, .service-card, .portfolio-item').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.style.transform='translate(-50%,-50%) scale(2)'; ring.style.transform='translate(-50%,-50%) scale(1.5)'; ring.style.opacity='0.2'; });
+    el.addEventListener('mouseleave', () => { cursor.style.transform='translate(-50%,-50%) scale(1)'; ring.style.transform='translate(-50%,-50%) scale(1)'; ring.style.opacity='0.4'; });
+  });
   function setLang(lang) {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent===lang.toUpperCase()));
+    document.querySelectorAll('[data-it]').forEach(el => { const txt = el.getAttribute('data-'+lang); if(txt) el.innerHTML = txt; });
     document.querySelectorAll('[data-it]').forEach(el => { 
       const txt = el.getAttribute('data-'+lang); 
       if(txt) el.innerHTML = txt; 
